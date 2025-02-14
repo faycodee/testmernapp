@@ -10,13 +10,24 @@ app.use(express.json());
 app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+mongoose
+  .connect(
+    "mongodb+srv://faysaloumzil1:SgySod0sL0FczX2u@cluster0.0deew.mongodb.net/mernproject?retryWrites=true&w=majority&appName=Cluster0"
+  )
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Define User model
 const UserModel = require("./models/Users");
 
+// GET all users
+app.get("/", async (req, res) => {
+  try {
+    res.send("hello");
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch users" });
+  }
+});
 // GET all users
 app.get("/users", async (req, res) => {
   try {
@@ -39,7 +50,7 @@ app.post("/users", async (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
