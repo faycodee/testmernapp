@@ -1,18 +1,17 @@
 {
+  "main": "index.js",
   "name": "server",
   "version": "1.0.0",
-  "main": "app.js",
   "scripts": {
-    "dev": "env-cmd -f .env nodemon app",
-    "start": "node app.js"
+    "dev": "env-cmd -f .env nodemon index"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "MERN server for user management",
+  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.4.2",
+    "dotenv": "^16.4.7",
     "env-cmd": "^10.1.0",
     "express": "^4.21.2",
     "mongoose": "^8.10.1",
