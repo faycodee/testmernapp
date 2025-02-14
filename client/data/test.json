@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "nom": "t bag",
+      "image": "t bag.jpg",
+      "age": 24
+    },
+    {
+      "id": "2",
+      "nom": "c not",
+      "image": "c not.jpg",
+      "age": 32
+    },
+    {
+      "id": "3",
+      "nom": "sara tanckredy",
+      "image": "sara tanckredy.jpg",
+      "age": 18
+    },
+    {
+      "id": "4",
+      "nom": "Michael Scofield",
+      "image": "Michael Scofield.jpg",
+      "age": 16
+    },
+    {
+      "id": "5",
+      "nom": "lincoln ",
+      "image": "Lincoln Burrows.jpg",
+      "age": 43
+    },
+    {
+      "id": "6",
+      "nom": "bard belik",
+      "image": "brad bellick.webp",
+      "age": 29
+    }
+  ]
+}

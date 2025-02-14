@@ -1,0 +1,15 @@
+{
+   "voitures": [
+     {"id": "v1", "Marque": "Dacia_Logan", "TypeCarburant": "Diesel", "PrixLocation": 200 },
+     {"id": "v2", "Marque": "Renault_Clio", "TypeCarburant": "Essence", "PrixLocation": 250 },
+     {"id": "v3", "Marque": "Peugeot_208", "TypeCarburant": "Diesel", "PrixLocation": 300 },
+     {"id": "v4", "Marque": "Toyota_Yaris", "TypeCarburant": "Hybride", "PrixLocation": 400 },
+     {"id": "v5", "Marque": "Ford_Focus", "TypeCarburant": "Essence", "PrixLocation": 350 },
+     {"id": "v6", "Marque": "Volkswagen_Golf", "TypeCarburant": "Diesel", "PrixLocation": 450 },
+     {"id": "v7", "Marque": "Hyundai_Tucson", "TypeCarburant": "Essence", "PrixLocation": 500 },
+     {"id": "v8", "Marque": "Kia_Rio", "TypeCarburant": "Diesel", "PrixLocation": 280 },
+     {"id": "v9", "Marque": "BMW_Série3", "TypeCarburant": "Essence", "PrixLocation": 600 },
+     {"id": "v10", "Marque": "Mercedes_AClass", "TypeCarburant": "Diesel", "PrixLocation": 650 }
+   ]
+ }
+ 
