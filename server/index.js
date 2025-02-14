@@ -12,7 +12,7 @@ app.use(cors());
 // Connect to MongoDB
 mongoose
   .connect(
-    "mongodb+srv://faysaloumzil1:SgySod0sL0FczX2u@cluster0.0deew.mongodb.net/mernproject?retryWrites=true&w=majority&appName=Cluster0"
+    process.env.MONGO_URL
   )
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
@@ -50,7 +50,7 @@ app.post("/users", async (req, res) => {
 });
 
 // Start server
-const PORT = 3001;
+const PORT =  process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
