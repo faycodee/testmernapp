@@ -2,8 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 const App = () => {
-  const api =process.env.REACT_APP_API_URL
-console.log(api);
 
   const [data, setData] = useState([]);
   const Name = useRef();
@@ -15,7 +13,7 @@ console.log(api);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${api}`);
+        const response = await axios.get(`https://testmernapp.onrender.com/users`);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -34,7 +32,7 @@ console.log(api);
       address: Address.current.value,
       createdAt: Createdat.current.value,
     };
-    axios.post(`${api}`, obj).then((res) => console.log(res.data));
+    axios.post(`https://testmernapp.onrender.com/users`, obj).then((res) => console.log(res.data));
   };
   return (
     <div style={{ padding: "80px" }}>
