@@ -4,7 +4,7 @@ import axios from "axios";
 const App = () => {
   const [data, setData] = useState([]);
   const [editingUser, setEditingUser] = useState(null); // Track the user being edited
-  const api = "http://localhost:3001/users";
+  const api = "https://testmernapp.onrender.com/users";
   const Name = useRef();
   const Email = useRef();
   const Age = useRef();
