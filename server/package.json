@@ -2,9 +2,11 @@
   "main": "index.js",
   "name": "server",
   "version": "1.0.0",
-  "scripts": {
-    "dev": "env-cmd -f .env nodemon index"
-  },
+"scripts": {
+  "dev": "env-cmd -f .env nodemon index",
+  "start": "node index.js",
+  "build": "echo 'Build complete'"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
