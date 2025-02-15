@@ -11,9 +11,7 @@ app.use(cors());
 
 // Connect to MongoDB
 mongoose
-  .connect(
-    process.env.MONGO_URL
-  )
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
@@ -38,7 +36,6 @@ app.get("/users", async (req, res) => {
   }
 });
 
-// POST new user
 app.post("/users", async (req, res) => {
   try {
     const user = new UserModel(req.body);
@@ -48,9 +45,46 @@ app.post("/users", async (req, res) => {
     res.status(400).json({ error: "Failed to create user" });
   }
 });
+// Update a user
+app.put("/users/:id", async (req, res) => {
+  try {
+    const updatedUser = await UserModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
 
-// Start server
-const PORT =  process.env.PORT || 3001;
+// delet
+app.delete("/users/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    // Find and delete the user by ID
+    const deletedUser = await UserModel.findByIdAndDelete(id);
+
+    if (!deletedUser) {
+      return res.status(404).send(id);
+    }
+
+    res.status(200).json({ message: "User deleted successfully", id });
+    // res.status(200).json({ message: "User deleted successfully", deletedUser });
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    res.status(500).json({ error: "Failed to delete user" });
+  }
+});
+
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
